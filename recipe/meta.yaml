@@ -11,32 +11,35 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed -vvv "
 
 requirements:
   build:
     - {{ compiler('c') }}  # [not (win and py27)]
   host:
-    - cffi >=1.0.0
+    - cffi >=1.15.0
     - pip
     - python
-    - m2w64-toolchain  # [win and py27]
-    - libpython        # [win and py27]
+    - m2w64-toolchain 5.3.0 # [win and py27]
+    - libpython 2.1       # [win and py27]
   run:
-    - cffi >=1.0.0
+    - cffi >=1.15.0
     - python
     - m2w64-gcc-libs   # [win and py27]
 
 test:
   imports:
     - cmarkgfm
+  commands:
+    - pip check
 
 about:
-  home: https://github.com/jonparrott/cmarkgfm
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: Minimal bindings to GitHub's fork of cmark
+  dev_url: https://github.com/jonparrott/cmarkgfm
+  documentation: https://pypi.org/project/cmarkgfm/
+  summary: Minimalist Python bindings to GitHub’s fork of cmark.
 
 extra:
   recipe-maintainers:
