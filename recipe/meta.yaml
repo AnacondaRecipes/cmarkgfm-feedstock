@@ -18,26 +18,32 @@ requirements:
     - {{ compiler('c') }}  # [not (win and py27)]
   host:
     - cffi >=1.15.0
-    - pip
     - python
+    - pip
+    - wheel
     - m2w64-toolchain 5.3.0 # [win and py27]
     - libpython 2.1       # [win and py27]
+    - {{ pin_compatible('m2w64-gcc-libs', max_pin='5.3.0') }}   # [win and py27]
+
   run:
     - cffi >=1.15.0
     - python
     - m2w64-gcc-libs   # [win and py27]
 
 test:
+  - pip
   imports:
     - cmarkgfm
   commands:
     - pip check
 
 about:
+  home: https://github.com/jonparrott/cmarkgfm
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
   dev_url: https://github.com/jonparrott/cmarkgfm
+  description: Minimalist Python bindings to GitHub’s fork of cmark.
   documentation: https://pypi.org/project/cmarkgfm/
   summary: Minimalist Python bindings to GitHub’s fork of cmark.
 
