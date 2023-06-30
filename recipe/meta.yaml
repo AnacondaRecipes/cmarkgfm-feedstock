@@ -32,7 +32,6 @@ requirements:
 
 test:
   imports:
-    - pip
     - cmarkgfm
   commands:
     - pip check
