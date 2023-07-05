@@ -37,7 +37,7 @@ test:
     - pip check
 
 # Platform-specific test section
-{% if not osx %}
+{% if osx %}
 test:
   skip: True
 {% endif %}
