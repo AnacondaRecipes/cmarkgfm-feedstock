@@ -33,7 +33,6 @@ requirements:
 test:
   imports:
     - cmarkgfm
-    - pip
   commands:
     - pip check
 
