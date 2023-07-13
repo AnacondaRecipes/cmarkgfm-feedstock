@@ -31,16 +31,13 @@ requirements:
     - m2w64-gcc-libs   # [win and py27]
 
 test:
+  skip: True  # [osx]
+  requires: 
+    - pip
   imports:
     - cmarkgfm
   commands:
     - pip check
-
-# Platform-specific test section
-{% if osx %}
-test:
-  skip: True
-{% endif %}
 
 about:
   home: https://github.com/jonparrott/cmarkgfm
