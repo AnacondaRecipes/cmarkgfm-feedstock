@@ -10,11 +10,13 @@ source:
   sha256: fe859b0e98d222b4b458022007daac2757e970f0671d45e55d01931c1b4bb3cb
 
 build:
+  noarch: python
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed -vvv "
 
 requirements:
   build:
+    - pip
     - {{ compiler('c') }}  # [not (win and py27)]
   host:
     - cffi =>1.15.0
