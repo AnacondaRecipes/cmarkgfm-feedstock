@@ -19,7 +19,7 @@ requirements:
     - pip
     - {{ compiler('c') }}  # [not (win and py27)]
   host:
-    - cffi =>1.15.0
+    - cffi 1.15
     - python
     - pip
     - wheel
