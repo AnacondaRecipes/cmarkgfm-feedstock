@@ -1,5 +1,5 @@
 {% set name = "cmarkgfm" %}
-{% set version = "2022.10.27" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -22,7 +22,6 @@ requirements:
     - pip
     - setuptools
     - wheel
-    - {{ pin_compatible('m2w64-gcc-libs', max_pin='5.3.0') }}   # [win and py27]
 
   run:
     - cffi 1.15.0
