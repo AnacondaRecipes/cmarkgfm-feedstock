@@ -24,7 +24,7 @@ requirements:
     - wheel
 
   run:
-    - cffi 1.15.1
+    - cffi >=1.15.1
     - python
 
 test:
