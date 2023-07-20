@@ -16,7 +16,6 @@ build:
 
 requirements:
   build:
-    - pip
     - {{ compiler('c') }}
   host:
     - cffi 1.15
