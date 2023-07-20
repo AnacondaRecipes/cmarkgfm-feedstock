@@ -17,7 +17,7 @@ build:
 requirements:
   build:
     - pip
-    - {{ compiler('c') }}  # [not (win and py27)]
+    - {{ compiler('c') }}
   host:
     - cffi 1.15
     - python
