@@ -23,7 +23,6 @@ requirements:
     - python
     - pip
     - wheel
-    - libpython 2.1       # [win and py27]
     - {{ pin_compatible('m2w64-gcc-libs', max_pin='5.3.0') }}   # [win and py27]
 
   run:
