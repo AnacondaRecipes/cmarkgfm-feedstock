@@ -17,14 +17,14 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - cffi ==1.15.0
+    - cffi 1.15.1
     - python
     - pip
     - setuptools
     - wheel
 
   run:
-    - cffi ==1.15.0
+    - cffi 1.15.1
     - python
 
 test:
