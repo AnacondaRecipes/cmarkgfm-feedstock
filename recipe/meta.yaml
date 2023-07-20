@@ -16,6 +16,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - libffi ==7.0
   host:
     - cffi 1.15
     - python
@@ -25,11 +26,13 @@ requirements:
 
   run:
     - cffi 1.15.0
+    - libffi ==7.0
     - python
 
 test:
   requires: 
     - pip
+    - libffi ==7.0
   imports:
     - cmarkgfm
   commands:
