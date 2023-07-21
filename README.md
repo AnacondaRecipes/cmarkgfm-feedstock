@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cmarkgfm-feedstock/blob/main/LICENSE.txt)
 
-Summary: Minimal bindings to GitHub's fork of cmark
+Summary: Minimal bindings to cmark
 
 Current build status
 ====================
