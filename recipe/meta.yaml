@@ -1,5 +1,5 @@
 {% set name = "cmarkgfm" %}
-{% set version = "2022.10.27" %}
+{% set version = "2024.11.20" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 93d9ac7716ea901ca0bfd18ae3b68f1f6bf51de0830c3f233ef734fcd52a0799
+  url: 
+  sha256: 5dd01cf61975a8a57213cdef5ed870e936032f13fe93d60ddf659ffb9cf73c6a 
 
 build:
   number: 0
