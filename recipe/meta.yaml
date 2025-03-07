@@ -36,11 +36,11 @@ test:
     - pip check
 
 about:
-  home: https://github.com/jonparrott/cmarkgfm
+  home: https://github.com/theacodes/cmarkgfm
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  dev_url: https://github.com/jonparrott/cmarkgfm
+  dev_url: https://github.com/theacodes/cmarkgfm
   doc_url: https://pypi.org/project/cmarkgfm/
   description: Minimalist Python bindings to GitHub’s fork of cmark.
   documentation: https://pypi.org/project/cmarkgfm/
