@@ -1,50 +1,55 @@
 {% set name = "cmarkgfm" %}
-{% set version = "2024.11.20" %}
+{% set version = "2025.10.22" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5dd01cf61975a8a57213cdef5ed870e936032f13fe93d60ddf659ffb9cf73c6a 
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5bec61007b65b919488442c838c58a6c8bf4741f5103c593b2ef180d39818eda 
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv --ignore-installed
+  skip: true  # [py<39]
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
   host:
-    - cffi >=1.15.1
     - python
     - pip
-    - setuptools
     - wheel
-
+    - setuptools >=80.9.0
+    - cffi >=2.0.0
+    - pycparser >=2.06
   run:
-    - cffi >=1.15.1
+    - cffi >=2.0.0
     - python
 
 test:
-  requires: 
-    - pip
+  source_files:
+    - tests
   imports:
     - cmarkgfm
   commands:
     - pip check
+    - pytest -v tests
+  requires: 
+    - pip
+    - pytest
 
 about:
   home: https://github.com/theacodes/cmarkgfm
+  summary: Minimalist Python bindings to GitHub’s fork of cmark.
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  dev_url: https://github.com/theacodes/cmarkgfm
-  doc_url: https://pypi.org/project/cmarkgfm/
   description: Minimalist Python bindings to GitHub’s fork of cmark.
-  documentation: https://pypi.org/project/cmarkgfm/
-  summary: Minimalist Python bindings to GitHub’s fork of cmark.
+  dev_url: https://github.com/theacodes/cmarkgfm
+  doc_url: https://pypi.org/project/cmarkgfm
 
 extra:
   recipe-maintainers:
